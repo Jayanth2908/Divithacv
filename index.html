@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divitha P - AI/ML Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --dark: #333;
+            --light: #f4f4f4;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #4a42e8);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .contact-info a:hover {
+            transform: translateY(-3px);
+        }
+        
+        section {
+            padding: 3rem 0;
+            background: white;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        section:nth-child(even) {
+            background: #f4f4f4;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 1rem;
+        }
+        
+        .education-item, .project-item, .internship-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .education-item:nth-child(even), .project-item:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .education-period, .internship-period {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-degree, .project-title, .internship-company {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-institution, .project-description, .internship-description {
+            margin-bottom: 0.5rem;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .skill {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        }
+        
+        .languages-container, .interests-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .language, .interest {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .language-name, .interest-name {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+        
+        .language-proficiency {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .interest-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background: var(--dark);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .education-item, .project-item, .internship-item {
+                padding: 1rem;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        section {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <!-- Replace with actual photo path -->
+            <img src="C:\Users\jayan\Downloads\WhatsApp Image 2025-04-17 at 21.27.45_c9b923d5.jpg" alt="Divitha P" class="profile-img">
+            <h1>Divitha P</h1>
+            <p class="tagline">AI & ML Aspirant | Problem Solver | Innovator</p>
+            <div class="contact-info">
+                <a href="tel:7993867192"><i class="fas fa-phone"></i> 7993867192</a>
+                <a href="mailto:prabhakardivitha@gmail.com"><i class="fas fa-envelope"></i> prabhakardivitha@gmail.com</a>
+                <a href="https://www.linkedin.com/in/divitha-p-9653b1275/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>An AI & ML aspirant looking for opportunities within a reputed organization for skill development and effective contribution. Eager and motivated in solving real-world problems, learning new technologies, and innovating.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="education-period">DECEMBER 2021 - PRESENT</div>
+                <div class="education-degree">Artificial Intelligence and Machine Learning (AIML)</div>
+                <div class="education-institution">Sreenivasa Institute of Technology Management and Studies</div>
+                <div class="education-details">B.Tech CGPA: 9.1</div>
+            </div>
+            <div class="education-item">
+                <div class="education-period">2019-2021</div>
+                <div class="education-degree">Maths, Physics, Chemistry [MPC]</div>
+                <div class="education-institution">Vijayam Junior College</div>
+                <div class="education-details">Intermediate Percentage: 91.9%</div>
+            </div>
+            <div class="education-item">
+                <div class="education-period">2018-2019</div>
+                <div class="education-degree">Class 10</div>
+                <div class="education-institution">Prakasham Vidyalaya</div>
+                <div class="education-details">CGPA: 9.7</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-item">
+                <div class="project-title">Accident Alert System Using AIML</div>
+                <div class="project-description">
+                    <p>Built and designed a real-time application to predict and detect accidents on highways using ML algorithms. The project helps in detecting accidents and immediately takes appropriate counter measures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="internship">
+        <div class="container">
+            <h2>Internship</h2>
+            <div class="internship-item">
+                <div class="internship-period">07/2024 - 09/2024</div>
+                <div class="internship-company">Java Full Stack Web Development</div>
+                <div class="internship-institution">Main Flow Services And Technologies</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill">C</div>
+                <div class="skill">SQL</div>
+                <div class="skill">Java</div>
+                <div class="skill">Python</div>
+                <div class="skill">DBMS</div>
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">Communication</div>
+                <div class="skill">PowerBI</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="languages">
+        <div class="container">
+            <h2>Languages</h2>
+            <div class="languages-container">
+                <div class="language">
+                    <div class="language-name">Tamil</div>
+                    <div class="language-proficiency">Full professional proficiency</div>
+                </div>
+                <div class="language">
+                    <div class="language-name">English</div>
+                    <div class="language-proficiency">Full professional proficiency</div>
+                </div>
+                <div class="language">
+                    <div class="language-name">Telugu</div>
+                    <div class="language-proficiency">Full professional proficiency</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="interests">
+        <div class="container">
+            <h2>Interests</h2>
+            <div class="interests-container">
+                <div class="interest">
+                    <div class="interest-icon"><i class="fas fa-plane"></i></div>
+                    <div class="interest-name">Travelling</div>
+                </div>
+                <div class="interest">
+                    <div class="interest-icon"><i class="fas fa-utensils"></i></div>
+                    <div class="interest-name">Cooking</div>
+                </div>
+                <div class="interest">
+                    <div class="interest-icon"><i class="fas fa-music"></i></div>
+                    <div class="interest-name">Dancing</div>
+                </div>
+                <div class="interest">
+                    <div class="interest-icon"><i class="fas fa-headphones"></i></div>
+                    <div class="interest-name">Music</div>
+                </div>
+                <div class="interest">
+                    <div class="interest-icon"><i class="fas fa-paint-brush"></i></div>
+                    <div class="interest-name">Drawing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Divitha P. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation trigger on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
